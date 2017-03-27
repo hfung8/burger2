@@ -4,7 +4,6 @@ var methodOverride = require('method-override');
 var app = express();
 var PORT = process.env.PORT || 3306;
 
-app.use(express.static(__dirname + '/public'));
 app.use(bodyParser.urlencoded({
 	extended: false
 }));
@@ -16,7 +15,6 @@ app.engine('handlebars', exphbs({defaultLayout: 'main'}));
 app.set('view engine', 'handlebars');
 
 require("./routes/api-routes.js")(app);
-require("./routes/html-routes.js")(app);
 var db = require("./models");
 
 db.sequelize.sync().then(function() {
