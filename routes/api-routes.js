@@ -1,10 +1,14 @@
 var express = require("express");
-var router = express.Router();
-var burgers = require("../models/burgers.js");
+var db = require("../models/post.js");
 
-router.get("/api/burgers", function(req,res){
-	burgers.findAll({}).then(function(results){
+module.exports = function(app){
+
+app.get("/api/all", function(req,res){
+	db.burgers.findAll({})
+	.then(function(results){
 		res.json(results);
-	})
-})
-module.exports = router;
+	});
+});
+
+
+}

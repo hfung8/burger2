@@ -1,8 +1,11 @@
-var db = require('./index.js');
+var Sequelize = require("sequelize");
+var sequelize = require("../config/connection.js");
 
 var burgers = sequelize.define('burgers', {
 	id: {
-		type: Sequelize.INTEGER
+		type: Sequelize.INTEGER,
+		autoIncrement: true,
+		primaryKey: true
 	},
 	burger_name:{
 		type: Sequelize.STRING
