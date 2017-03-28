@@ -1,5 +1,5 @@
 var express = require("express");
-var db = require("../models/post.js");
+var burgers = require("../models/post.js")
 
 module.exports = function(app){
 
@@ -11,11 +11,12 @@ app.get("/", function(req,res){
 })
 
 app.post("/burgers/create", function(req,res){
-	db.burgers.create({
-		burgerName: req.body.burger_name,
-		devoured: req.body.devoured
-	})
-})
+	burgers.create({
+		burgerType: req.body.burger_name,
+	}).then(function(dbPost){
+		res.json(dbPost);
+	});
+});
 
 // app.get("/api/all", function(req,res){
 // 	db.burgers.findAll({})

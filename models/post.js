@@ -7,7 +7,7 @@ var burgers = sequelize.define('burgers', {
 		autoIncrement: true,
 		primaryKey: true
 	},
-	burger_name:{
+	burgerType:{
 		type: Sequelize.STRING
 	},
 	devoured:{
