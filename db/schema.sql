@@ -1,5 +1,5 @@
-DROP DATABASE burgers_db;
-CREATE DATABASE burgers_db;
+DROP DATABASE burgers_data;
+CREATE DATABASE burgers_data;
 -- USE burgers_db;
 -- CREATE TABLE burgers(
 -- id int auto_increment,

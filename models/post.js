@@ -1,7 +1,7 @@
 var Sequelize = require("sequelize");
 var sequelize = require("../config/connection.js");
 
-var burgers = sequelize.define('burgers', {
+var burgers = sequelize.define('burgers_data', {
 	id: {
 		type: Sequelize.INTEGER,
 		autoIncrement: true,
